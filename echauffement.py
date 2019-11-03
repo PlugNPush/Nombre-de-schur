@@ -8,13 +8,7 @@ class Color:
         self.orange = '\033[33m'
         self.blue = '\033[34m'
         self.purple = '\033[35m'
-        self.colors = [""] * 6
-        self.colors[0] = self.white
-        self.colors[1] = self.red
-        self.colors[2] = self.green
-        self.colors[3] = self.orange
-        self.colors[4] = self.blue
-        self.colors[5] = self.purple
+        self.colors = [self.white, self.red, self.green, self.orange, self.blue, self.purple]
                 
 
 class Element:
@@ -57,4 +51,31 @@ def exo2():
         print(random.choice(colorselection), i)
     
     
-exo2()
+# exo2()
+
+
+def exo3():
+    colors = Color()
+    
+    aa = Element(8, colors.red)
+    ba = Element(5, colors.red)
+    ca = Element(13, colors.red)
+    
+    ab = Element(9, colors.purple)
+    bb = Element(1, colors.blue)
+    cb = Element(10, colors.green)
+    
+    tripletrouge = Triplet(aa, ba, ca)
+    tripletrandom = Triplet(ab, bb, cb)
+    
+    if tripletrouge.isSameColor():
+        print("Le triplet rouge est de la même couleur.")
+    else:
+        print("Le triplet rouge n'est pas de la même couleur.")
+        
+    if tripletrandom.isSameColor():
+        print("Le triplet random est de la meme couleur.")
+    else:
+        print("Le triplet random n'est pas de la même couleur.")
+
+exo3()
