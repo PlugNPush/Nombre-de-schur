@@ -60,7 +60,6 @@ def exo3():
 def exo4():
     colors = Color()
     p = int(input("Donnez p <= 100: "))
-    en = Element(0, colors.white)
     t = []
     for i in range(1, p):
         for s in range(i, p):
