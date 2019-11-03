@@ -54,8 +54,20 @@ def exo3():
     else:
         print("Le triplet random n'est pas de la même couleur.")
 
-exo3()
+# exo3()
 
 
 def exo4():
-    print("TBD")
+    colors = Color()
+    p = int(input("Donnez p <= 100: "))
+    en = Element(0, colors.white)
+    t = []
+    for i in range(1, p):
+        for s in range(i, p):
+            if i+s <= p:
+                t.append(Triplet(Element(i, colors.white), Element(s, colors.white), Element(i+s, colors.white)))
+    
+    for i in range(0, len(t)):
+        t[i].print()
+
+exo4()

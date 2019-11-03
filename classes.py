@@ -13,6 +13,13 @@ class Element:
     def __init__(self, a, b):
         self.value = a
         self.color = b
+    
+    def print(self):
+        print(self.color, str(self.value))
+    
+    def printable(self):
+        val = self.color + str(self.value)
+        return val
         
 class Triplet:
     def __init__(self, a, b, c):
@@ -25,4 +32,7 @@ class Triplet:
             return True
         else:
             return False
+    
+    def print(self):
+        print("(" + self.element.printable() + ", " + self.element2.printable() + ", " + self.element3.printable() + ")")
         
