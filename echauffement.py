@@ -43,6 +43,10 @@ def exo1():
         else:
             print(colors.blue, i)
 
+exo1()
+
+
+
 def exo2():
     colors = Color()
     x = int(input("Combien de nombres: "))
