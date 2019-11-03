@@ -24,7 +24,7 @@ class Triplet:
         else:
             return False
         
-def exo1:
-    let colors = Color()
+def  exo1():
+    colors = Color()
     
 exo1()
