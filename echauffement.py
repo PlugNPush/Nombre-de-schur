@@ -108,21 +108,15 @@ def exo6():
     t = []
     colorselection = random.sample(colors.colors, n)
     for i in range(1, p+1):
-        t.append(Element(random.choice(colorselection), i))
-    
-    print(t)
+        t.append(Element(i, random.choice(colorselection)))
     
     listedcolor = []
     for color in colorselection:
-        stop = False
-        cnt = 1
-        while stop == False and cnt <= (p+1):
-        # ICI ON A UN PROBLEME, ELEMENT N'EST PAS RECONNU DANS T.
-            if Element(color, cnt) in t:
+        for i in t:
+            if color == i.color:
                 listedcolor.append(color)
-                stop = True
-            else:
-                cnt += 1
+    
+    listedcolor = list(set(listedcolor))
     
     print(listedcolor)
     if len(listedcolor) == n:
