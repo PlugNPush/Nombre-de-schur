@@ -69,24 +69,65 @@ def exo4():
     for i in range(0, len(t)):
         t[i].print()
     
-    returned = False
-    cnt = 0
-    for i in range(0, len(t)):
-        if t[i].isSameColor():
-            returned = True
-            cnt += 1
-    if cnt == len(t):
-        returned = False
-    
 
 # exo4()
+
 
 def exo5():
     colors = Color()
     p = int(input("Donnez p <= 100: "))
+    t = []
+    colorselection = random.sample(colors.colors, 2)
+    for i in range(1, p):
+        for s in range(i, p):
+            if i+s <= p:
+                t.append(Triplet(Element(i, random.choice(colorselection)), Element(s, random.choice(colorselection)), Element(i+s, random.choice(colorselection))))
+
+    for i in range(0, len(t)):
+        t[i].print()
+
+    returned = False
+    cnt = 0
+    for i in range(0, len(t)):
+        if t[i].isSameColor() == False:
+            cnt += 1
+    if cnt == len(t):
+        returned = True
+    
+    if returned:
+        print("VRAI")
+    else:
+        print("FAUX")
+
+#exo5()
+
+def exo6():
+    colors = Color()
+    p = int(input("Donnez p <= 100: "))
     n = int(input("Combien de couleurs ? (n <= 6): "))
+    t = []
     colorselection = random.sample(colors.colors, n)
     for i in range(1, p+1):
-        print(random.choice(colorselection), i)
-
-exo5()
+        t.append(Element(random.choice(colorselection), i))
+    
+    print(t)
+    
+    listedcolor = []
+    for color in colorselection:
+        stop = False
+        cnt = 1
+        while stop == False and cnt <= (p+1):
+        # ICI ON A UN PROBLEME, ELEMENT N'EST PAS RECONNU DANS T.
+            if Element(color, cnt) in t:
+                listedcolor.append(color)
+                stop = True
+            else:
+                cnt += 1
+    
+    print(listedcolor)
+    if len(listedcolor) == n:
+        print("Vrai")
+    else:
+        print("Faux")
+    
+exo6()
