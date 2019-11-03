@@ -43,7 +43,7 @@ def exo1():
         else:
             print(colors.blue, i)
 
-exo1()
+# exo1()
 
 
 
