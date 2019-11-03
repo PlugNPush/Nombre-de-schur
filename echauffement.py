@@ -24,7 +24,13 @@ class Triplet:
         else:
             return False
         
-def  exo1():
+def exo1():
     colors = Color()
+    n = int(input("Donnez n: "))
+    for i in range(0, n):
+        if i%2 == 0:
+            print(colors.red, i)
+        else:
+            print(colors.blue, i)
     
 exo1()
