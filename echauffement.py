@@ -68,5 +68,25 @@ def exo4():
     
     for i in range(0, len(t)):
         t[i].print()
+    
+    returned = False
+    cnt = 0
+    for i in range(0, len(t)):
+        if t[i].isSameColor():
+            returned = True
+            cnt += 1
+    if cnt == len(t):
+        returned = False
+    
 
-exo4()
+# exo4()
+
+def exo5():
+    colors = Color()
+    p = int(input("Donnez p <= 100: "))
+    n = int(input("Combien de couleurs ? (n <= 6): "))
+    colorselection = random.sample(colors.colors, n)
+    for i in range(1, p+1):
+        print(random.choice(colorselection), i)
+
+exo5()
