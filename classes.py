@@ -35,4 +35,6 @@ class Triplet:
     
     def print(self):
         print("(" + self.element.printable() + ", " + self.element2.printable() + ", " + self.element3.printable() + ")")
-        
+    
+    def printable(self):
+        return "(" + self.element.printable() + ", " + self.element2.printable() + ", " + self.element3.printable() + ")"

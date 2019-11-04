@@ -43,18 +43,19 @@ def exo3():
     
     tripletrouge = Triplet(aa, ba, ca)
     tripletrandom = Triplet(ab, bb, cb)
-    
-    if tripletrouge.isSameColor():
-        print("Le triplet rouge est de la même couleur.")
-    else:
-        print("Le triplet rouge n'est pas de la même couleur.")
-        
-    if tripletrandom.isSameColor():
-        print("Le triplet random est de la meme couleur.")
-    else:
-        print("Le triplet random n'est pas de la même couleur.")
+     
+    for triplet in [tripletrouge, tripletrandom]:
+        if triplet.isSameColor():
+            print("le triplet "+triplet.printable()+" est monochromatique")
+            print("Vrai")
+        else:
+            print("le triplet "+triplet.printable()+" est polychromatique")
+            print("Faux")
+            
 
-# exo3()
+
+
+#exo3()
 
 
 def exo4():
@@ -70,7 +71,7 @@ def exo4():
         t[i].print()
     
 
-# exo4()
+#exo4()
 
 
 def exo5():
@@ -124,4 +125,47 @@ def exo6():
     else:
         print("Faux")
     
-exo6()
+#exo6()
+
+
+def exo7(a):
+    l = []
+    while a/2 != 0 :
+        l.append(int(a%2))
+        a = int(a/2)
+    l.reverse()
+    if l == []:
+        l.append(0)
+    print(l)
+    
+#exo7(11)
+
+def exo8(a, b):
+    l = []
+    while a/b != 0 :
+        l.append(int(a%b))
+        a = int(a/b)
+    l.reverse()
+    if l == []:
+        l.append(0)
+    print(l)
+#exo8(714,2)
+
+def exo9():
+    colors = Color()
+    p = int(input("Donnez p <= 100: "))
+    n = int(input("Combien de couleurs ? (n <= 6): "))
+    t = []
+    colorselection = random.sample(colors.colors, n)
+    for i in range(1, p):
+        for s in range(i, p):
+            for color1 in colorselection:
+                for color2 in colorselection:
+                    for color3 in colorselection:
+
+                         if i+s <= p:
+                             t.append(Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3)))
+    
+    for i in range(0, len(t)):
+        t[i].print()
+exo9()
