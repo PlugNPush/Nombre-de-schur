@@ -164,8 +164,7 @@ def exo9():
                     for color3 in colorselection:
 
                          if i+s <= p:
-                             t.append(Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3)))
-    
-    for i in range(0, len(t)):
-        t[i].print()
+                            triple = Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3))
+                            t.append(triple)
+                            triple.print()
 exo9()
