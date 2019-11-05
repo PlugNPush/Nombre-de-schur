@@ -1,5 +1,5 @@
-import random
-
+import random                     # On importe les classes de l'autre fichier pour simplifier les programmes,
+                                   # faire en sorte d'écrire le moins possible
 from classes import Color
 from classes import Element
 from classes import Triplet
@@ -8,12 +8,12 @@ def exo1():
     colors = Color()
     n = int(input("Donnez n: "))
     for i in range(1, n+1):
-        if i%2 == 0:
+        if i%2 == 0:                       # On utilise le modulo pour déterminer la parité des nombres saisies
             print(colors.red, i)
         else:
             print(colors.blue, i)
 
-# exo1()
+#exo1()
 
 
 
@@ -26,8 +26,7 @@ def exo2():
     for i in range(1, x+1):
         print(random.choice(colorselection), i)
     
-    
-# exo2()
+#exo2()
 
 
 def exo3():
