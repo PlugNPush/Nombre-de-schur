@@ -142,7 +142,7 @@ def exo7():
 
 def exo8():
     a=int(input("saisir un nombre"))
-    b=int(input("saisir la base"))
+    b=int(input("saisir la base (>1)"))        # Lorsque a<b, le programme ne trouve pas la forme binaire
     l = []
     while a/b != 0 :
         l.append(int(a%b))
@@ -151,7 +151,7 @@ def exo8():
     if l == []:
         l.append(0)
     print(l)
-#exo8()
+exo8()
 
 def exo9():
     colors = Color()
