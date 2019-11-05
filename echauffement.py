@@ -128,7 +128,8 @@ def exo6():
 #exo6()
 
 
-def exo7(a):
+def exo7():
+    a=int(input("saisir un nombre "))
     l = []
     while a/2 != 0 :
         l.append(int(a%2))
@@ -138,9 +139,11 @@ def exo7(a):
         l.append(0)
     print(l)
     
-#exo7(11)
+#exo7()
 
-def exo8(a, b):
+def exo8():
+    a=int(input("saisir un nombre"))
+    b=int(input("saisir la base"))
     l = []
     while a/b != 0 :
         l.append(int(a%b))
@@ -149,7 +152,7 @@ def exo8(a, b):
     if l == []:
         l.append(0)
     print(l)
-#exo8(714,2)
+#exo8()
 
 def exo9():
     colors = Color()
@@ -187,7 +190,7 @@ def exo9():
         print("\n", end='')
         
             
-exo9()
+#exo9()
 
 
 def exo10():
