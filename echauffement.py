@@ -210,25 +210,6 @@ def exo10():
                             triple.print()
 #exo10()
 
-def exo9():
-    colors = Color()
-    p = int(input("Donnez p <= 100: "))
-    n = int(input("Combien de couleurs ? (n <= 6): "))
-    t = []
-    colorselection = random.sample(colors.colors, n)
-    for i in range(1, p):
-        for s in range(i, p):
-            for color1 in colorselection:
-                for color2 in colorselection:
-                    for color3 in colorselection:
-
-                         if i+s <= p:
-                            triple = Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3))
-                            t.append(triple)
-                            triple.print()
-#exo9()
-
-
 def exof():
     colors = Color()
     p = int(input("Donnez p <= 100: "))
