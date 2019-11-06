@@ -21,7 +21,7 @@ def exo2():
     colors = Color()
     x = int(input("Combien de nombres: "))
     n = int(input("Combien de couleurs ? (n <= 6): "))
-    colorselection = [""] * 6
+    colorselection = [""] * 6                              # 
     colorselection = random.sample(colors.colors, n)
     for i in range(1, x+1):
         print(random.choice(colorselection), i)
@@ -43,7 +43,7 @@ def exo3():
     tripletrouge = Triplet(aa, ba, ca)
     tripletrandom = Triplet(ab, bb, cb)
      
-    for triplet in [tripletrouge, tripletrandom]:
+    for triplet in [tripletrouge, tripletrandom]:                # On écrit simplemant in sans écrire range car 
         if triplet.isSameColor():
             print("le triplet "+triplet.printable()+" est monochromatique")
             print("Vrai")
@@ -151,7 +151,7 @@ def exo8():
     if l == []:
         l.append(0)
     print(l)
-exo8()
+#exo8()
 
 def exo9():
     colors = Color()
@@ -176,7 +176,7 @@ def exo9():
         c[i].reverse()
     
     
-    for i in range(0, n**p):
+    for i in range(0, n**p):                                    # Pour cette exercice nous avons décidé de ne pas se reposer éssentiellment sur les classes
         color.append(c[i])
     
     
@@ -200,7 +200,7 @@ def exo10():
     colorselection = random.sample(colors.colors, n)
     for i in range(1, p):
         for s in range(i, p):
-            for color1 in colorselection:
+            for color1 in colorselection:      # Nous faisons 
                 for color2 in colorselection:
                     for color3 in colorselection:
 
@@ -209,3 +209,41 @@ def exo10():
                             t.append(triple)
                             triple.print()
 #exo10()
+
+def exo9():
+    colors = Color()
+    p = int(input("Donnez p <= 100: "))
+    n = int(input("Combien de couleurs ? (n <= 6): "))
+    t = []
+    colorselection = random.sample(colors.colors, n)
+    for i in range(1, p):
+        for s in range(i, p):
+            for color1 in colorselection:
+                for color2 in colorselection:
+                    for color3 in colorselection:
+
+                         if i+s <= p:
+                            triple = Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3))
+                            t.append(triple)
+                            triple.print()
+#exo9()
+
+
+def exof():
+    colors = Color()
+    p = int(input("Donnez p <= 100: "))
+    n = int(input("Combien de couleurs ? (n <= 6): "))
+    t = []
+    colorselection = random.sample(colors.colors, p)
+    for i in range(1, n):
+        for s in range(i, n):
+            for color1 in colorselection:
+                for color2 in colorselection:
+                    for color3 in colorselection:
+
+                         if i+s <= p:
+                            triple = Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3))
+                            t.append(triple)
+                            triple.print()
+
+exof()
