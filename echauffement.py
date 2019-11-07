@@ -49,9 +49,6 @@ def exo3():
         else:
             print("le triplet "+triplet.printable()+" est polychromatique")
             print("Faux")
-            
-
-
 
 #exo3()
 
@@ -191,6 +188,20 @@ def exo9():
 #exo9()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def exo10():
     colors = Color()
     p = int(input("Donnez p <= 100: "))
@@ -209,21 +220,84 @@ def exo10():
                             triple.print()
 #exo10()
 
+
+
+
+
+
+
+
+
+
+
 def exof():
     colors = Color()
     p = int(input("Donnez p <= 100: "))
     n = int(input("Combien de couleurs ? (n <= 6): "))
     t = []
+    c = []
+    color = []
     colorselection = random.sample(colors.colors, n)
-    for i in range(1, n):
-        for s in range(i, n):
-            for color1 in colorselection:
-                for color2 in colorselection:
-                    for color3 in colorselection:
+    for i in range(1, p+1):
+        t.append(i)
+    
+    for color1 in colorselection:
+        for color2 in colorselection:
+            for color3 in colorselection:
+                for color4 in colorselection:
+                    for color5 in colorselection:
+                        for color6 in colorselection:
+                            c.append([color1, color2, color3, color4, color5, color6])
+    
+    for i in range(0, len(c)):
+        c[i].reverse()
+    
+    print(c)
+    
+    for i in range(0, n**p):                                    # Pour cette exercice nous avons décidé de ne pas se reposer éssentiellment sur les classes
+        color.append(c[i])
+    
+    
+    for i in range(0, n**p):
+        color[i] = color[i][:n+1]
+    selection=[]
+    for iteration in range(0, len(color)):
+        elem=[]
+        for s in range(1, p+1):
+            #print(color[iteration][s-1] + str(t[s-1]), end='')
+            elem.append(Element(t[s-1], color[iteration][s-1]))
+        selection.append(elem)
+        #print("\n", end='')
+    for i in range (0, len(selection)):
+        for s in selection[i]:
+            print(s.printable(), end='')
+        print("")
+    filtre=[]
+    finalcolor=random.choice(colorselection)
+    for i in range (0, len(selection)):
+        if selection[i][0].color==finalcolor:
+            filtre.append(selection[i])
+    print("\n\n")
+    for i in range (0, len(filtre)):
+        for s in filtre[i]:
+            print(s.printable(), end='')
+        print("")
 
-                         if i+s <= p:
-                            triple = Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3))
-                            t.append(triple)
-                            triple.print()
+exof()
 
-#exof()
+
+
+
+#for i in range(1, p):
+        #for s in range(i, p):
+           # if i+s <= p:
+               # t.append(Triplet(Element(i, colors.white), Element(s, colors.white), Element(i+s, colors.white)))
+    
+    #for i in range(0, len(t)):
+        #t[i].print()
+
+
+
+
+
+
