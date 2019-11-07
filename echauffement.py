@@ -1,5 +1,5 @@
-import random                     # On importe les classes de l'autre fichier pour simplifier les programmes,
-                                   # faire en sorte d'écrire le moins possible
+import random                     # On importe les classes de l'autre fichier pour simplifier les programmes, faire en sorte d'écrire le moins possible
+                                  
 from classes import Color
 from classes import Element
 from classes import Triplet
@@ -20,9 +20,8 @@ def exo1():
 def exo2():
     colors = Color()
     x = int(input("Combien de nombres: "))
-    n = int(input("Combien de couleurs ? (n <= 6): "))
-    colorselection = [""] * 6                              # 
-    colorselection = random.sample(colors.colors, n)
+    n = int(input("Combien de couleurs ? (n <= 6): "))              
+    colorselection = random.sample(colors.colors, n)      # On utilise "sample" pour choisir aléatoirement un ensemble de n couleurs
     for i in range(1, x+1):
         print(random.choice(colorselection), i)
     
@@ -43,7 +42,7 @@ def exo3():
     tripletrouge = Triplet(aa, ba, ca)
     tripletrandom = Triplet(ab, bb, cb)
      
-    for triplet in [tripletrouge, tripletrandom]:                # On écrit simplemant in sans écrire range car 
+    for triplet in [tripletrouge, tripletrandom]:                        # On écrit simplemant "in" sans écrire "range" car on veut que le programme prenne en compte les triplets et non pas le nombre de triplet contenue dans la liste
         if triplet.isSameColor():
             print("le triplet "+triplet.printable()+" est monochromatique")
             print("Vrai")
@@ -227,4 +226,4 @@ def exof():
                             t.append(triple)
                             triple.print()
 
-exof()
+#exof()
