@@ -141,8 +141,8 @@ def exo7():
 #exo7()
 
 def exo8():
-    a=int(input("saisir un nombre"))
-    b=int(input("saisir la base (>1)"))        # Lorsque a<b, le programme ne trouve pas la forme binaire
+    a=int(input("Saisir un nombre: "))
+    b=int(input("Saisir la base (>1): "))
     l = []
     while a/b != 0 :
         l.append(int(a%b))
@@ -215,7 +215,7 @@ def exof():
     p = int(input("Donnez p <= 100: "))
     n = int(input("Combien de couleurs ? (n <= 6): "))
     t = []
-    colorselection = random.sample(colors.colors, p)
+    colorselection = random.sample(colors.colors, n)
     for i in range(1, n):
         for s in range(i, n):
             for color1 in colorselection:
@@ -227,4 +227,4 @@ def exof():
                             t.append(triple)
                             triple.print()
 
-exof()
+#exof()
