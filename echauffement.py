@@ -188,48 +188,6 @@ def exo9():
 #exo9()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def exo10():
-    colors = Color()
-    p = int(input("Donnez p <= 100: "))
-    n = int(input("Combien de couleurs ? (n <= 6): "))
-    t = []
-    colorselection = random.sample(colors.colors, n)
-    for i in range(1, p):
-        for s in range(i, p):
-            for color1 in colorselection:      # Nous faisons 
-                for color2 in colorselection:
-                    for color3 in colorselection:
-
-                         if i+s <= p:
-                            triple = Triplet(Element(i, color1), Element(s, color2), Element(i+s, color3))
-                            t.append(triple)
-                            triple.print()
-#exo10()
-
-
-
-
-
-
-
-
-
-
-
 def exof():
     colors = Color()
     p = int(input("Donnez p <= 100: "))
@@ -252,14 +210,15 @@ def exof():
     for i in range(0, len(c)):
         c[i].reverse()
     
-    print(c)
-    
-    for i in range(0, n**p):                                    # Pour cette exercice nous avons décidé de ne pas se reposer éssentiellment sur les classes
+    for i in range(0, n**p):            # Pour cette exercice nous avons décidé de ne pas se reposer éssentiellment sur les classes
         color.append(c[i])
     
     
     for i in range(0, n**p):
-        color[i] = color[i][:n+1]
+        if p>n:
+            color[i] = color[i][:p+1]
+        else:
+            color[i] = color[i][:n+1]
     selection=[]
     for iteration in range(0, len(color)):
         elem=[]
@@ -282,22 +241,19 @@ def exof():
         for s in filtre[i]:
             print(s.printable(), end='')
         print("")
+    
+    tripletFinal = []
+    storedElement = []
+    r = 0
+    for i in range(1, p):
+        for s in range(i, p):
+            if i+s <= p:
+                tripletFinal.append(Triplet(Element(i, filtre[r][i-1].color), Element(s, filtre[r][s-1].color), Element(i+s, filtre[r][i+s-1].color)))
+                r += 1
+    
+    for i in range(0, len(tripletFinal)):
+        tripletFinal[i].print()
 
 exof()
-
-
-
-
-#for i in range(1, p):
-        #for s in range(i, p):
-           # if i+s <= p:
-               # t.append(Triplet(Element(i, colors.white), Element(s, colors.white), Element(i+s, colors.white)))
-    
-    #for i in range(0, len(t)):
-        #t[i].print()
-
-
-
-
 
 
