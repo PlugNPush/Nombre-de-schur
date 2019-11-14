@@ -253,7 +253,8 @@ def exof():
     
     for i in range(0, len(tripletFinal)):
         tripletFinal[i].print()
-
+        
+        
 exof()
 
 
