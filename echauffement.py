@@ -244,12 +244,12 @@ def exof():
     
     tripletFinal = []
     storedElement = []
-    r = 0
-    for i in range(1, p):
-        for s in range(i, p):
-            if i+s <= p:
-                tripletFinal.append(Triplet(Element(i, filtre[r][i-1].color), Element(s, filtre[r][s-1].color), Element(i+s, filtre[r][i+s-1].color)))
-                r += 1
+    for r in range(0, len(filtre)):
+        for i in range(1, p):
+            for s in range(i, p):
+                if i+s <= p:
+                    tripletFinal.append(Triplet(Element(i, filtre[r][i-1].color), Element(s, filtre[r][s-1].color), Element(i+s, filtre[r][i+s-1].color)))
+
     
     for i in range(0, len(tripletFinal)):
         tripletFinal[i].print()
