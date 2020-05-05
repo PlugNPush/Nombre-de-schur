@@ -255,6 +255,4 @@ def exof():
         tripletFinal[i].print()
         
         
-exof()
-
-
+#exof()
